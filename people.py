@@ -66,7 +66,8 @@ def update(person_id, person):
     Updates person with person_id with passed in person 
     """
     # Get the person requested for update from the db into session
-    update_person = Person.query.filter(Person.person_id == person_id).one_or_none()
+    update_person = Person.query.filter(
+        Person.person_id == person_id).one_or_none()
 
     # Exit if person to update is not present in db
     if update_person is None:

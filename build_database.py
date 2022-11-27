@@ -1,11 +1,15 @@
 import os
-from config import db
+from config import app,db
 from models import Person
+
+
+
 
 PEOPLE = [
     {"fname": "Doug", "lname": "Farrell"},
     {"fname": "Kent", "lname": "Brockman"},
     {"fname": "Bunny", "lname": "Easter"},
+    {"fname": "Mohamed", "lname": "Youssef"}
 ]
 
 if os.path.exists('people.db'):

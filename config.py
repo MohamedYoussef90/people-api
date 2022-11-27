@@ -2,7 +2,7 @@ import os
 import connexion
 from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
-
+import app
 base_dir = os.path.abspath(os.path.dirname(__file__))
 
 # create connexion app instance
@@ -20,7 +20,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 # Create the SQLAlchemy db instance
 db = SQLAlchemy(app)
-
+app.app_context().push()
 # Init marshmallow
 # Used to person serialization and deserialization of SQLAlchemy models
 ma = Marshmallow(app)
