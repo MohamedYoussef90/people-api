@@ -19,3 +19,4 @@ for person in PEOPLE:
     db.session.add(p)
 
 db.session.commit()
+db.session.close()

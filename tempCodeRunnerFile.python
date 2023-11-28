@@ -1,0 +1,43 @@
+import turtle
+
+def draw_stripe(color, y_pos):
+    """Draws a single stripe of the flag."""
+    flag.color(color)
+    flag.begin_fill()
+    flag.goto(-300, y_pos)
+    flag.goto(300, y_pos)
+    flag.goto(300, y_pos + 100)
+    flag.goto(-300, y_pos + 100)
+    flag.goto(-300, y_pos)
+    flag.end_fill()
+
+def draw_triangle():
+    """Draws the red triangle at the hoist side of the flag."""
+    flag.color("red")
+    flag.begin_fill()
+    flag.goto(-300, 300)
+    flag.goto(-300, -300)
+    flag.goto(0, 0)
+    flag.goto(-300, 300)
+    flag.end_fill()
+
+# Set up the Turtle screen
+screen = turtle.Screen()
+screen.setup(width=600, height=300)
+
+# Create a Turtle object
+flag = turtle.Turtle()
+flag.up()
+flag.speed(3)
+
+# Draw the stripes
+draw_stripe("black", 200)
+draw_stripe("white", 100)
+draw_stripe("dark green", 0)
+
+# Draw the triangle
+draw_triangle()
+
+# Hide the turtle and finish
+flag.hideturtle()
+screen.mainloop()
